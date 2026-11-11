@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "name": "Vyshnavi",
+      "roll": "22CS101",
+      "cardId": "1001"
+    },
+    {
+      "name": "Nandini",
+      "roll": "22CS102",
+      "cardId": "1002"
+    },
+    {
+      "name": "Srujana",
+      "roll": "22CS103",
+      "cardId": "1003"
+    }
+  ],
+  "logs": [
+    {
+      "logId": "854d319f-194a-4f2b-ab4b-92da33d2afd1",
+      "cardId": "1060",
+      "deviceId": "dashboard-test",
+      "studentName": "Unknown Student",
+      "roll": null,
+      "result": "Denied",
+      "timestamp": "2026-11-07T04:40:32.113Z"
+    },
+    {
+      "logId": "3b7b031f-a26f-44f3-bc31-f35693af3ec0",
+      "cardId": "1002",
+      "deviceId": "dashboard-test",
+      "studentName": "Nandini",
+      "roll": "22CS102",
+      "result": "Granted",
+      "timestamp": "2026-11-07T04:39:30.388Z"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Virtual Classroom Access Gate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap"><link rel="stylesheet" href="styles.css"></head><body>
+<header class="top"><div><h1>Virtual Classroom Access Gate</h1><p>Tap an RFID card to enter the classroom subnet.</p></div><div id="apiStatus" class="pill">Connecting…</div></header>
+<main>
+<section class="gate">
+  <div class="scanner">
+    <div class="led-wrap"><div id="led" class="led" aria-hidden="true"></div><span class="led-label">Gate LED</span></div>
+    <div class="scan-body">
+      <h2>Scan a card</h2>
+      <form id="scanForm" class="row"><label>RFID card ID<input id="scanID" required placeholder="e.g. 1001" autocomplete="off"></label><button>Scan card</button></form>
+      <div id="scanResult" class="result">Waiting for a card…</div>
+      <div class="details"><span>Student<b id="showName">—</b></span><span>Roll<b id="showRoll">—</b></span><span>Card<b id="showID" class="mono">—</b></span><span>Virtual IP<b id="showIP" class="mono">—</b></span></div>
+    </div>
+  </div>
+  <aside class="subnet"><h2>Classroom subnet <code>10.20.30.0/24</code></h2><p class="muted">Students currently inside. A granted scan adds a student, a denied scan is blocked.</p><div id="members" class="members"></div></aside>
+</section>
+<section class="stats"><article><span>Registered students</span><b id="studentCount">—</b></article><article><span>Total scans</span><b id="scanCount">—</b></article><article class="g"><span>Access granted</span><b id="grantedCount">—</b></article><article class="r"><span>Access denied</span><b id="deniedCount">—</b></article></section>
+<div class="cols">
+<section class="panel"><h2>Register a student</h2><form id="registerForm" class="stack"><label>Student name<input id="newName" required></label><label>Roll number<input id="newRoll" required></label><label>RFID card ID<input id="newCard" required></label><button>Register student</button></form><p id="registerMessage" class="muted"></p></section>
+<section class="panel"><h2>Registered students</h2><div class="scroll"><table><thead><tr><th>Name</th><th>Roll</th><th>RFID ID</th><th></th></tr></thead><tbody id="studentTable"></tbody></table></div></section>
+</div>
+<section class="panel"><h2>Entry log <button id="refreshBtn" class="secondary" type="button">Refresh</button></h2><div class="scroll"><table><thead><tr><th>Time</th><th>RFID ID</th><th>Student</th><th>Device</th><th>Result</th></tr></thead><tbody id="logTable"></tbody></table></div></section>
+</main><footer>Virtual Classroom Access Gate</footer><script src="app.js"></script></body></html>
