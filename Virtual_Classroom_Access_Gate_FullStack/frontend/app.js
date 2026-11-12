@@ -1,4 +1,4 @@
-const API=(location.protocol==="file:"?"http://localhost:3000":"")+"/api",$=id=>document.getElementById(id);
+const API="https://virtual-classroom-backend-mn0h.onrender.com/api",$=id=>document.getElementById(id);
 const SUBNET="10.20.30.";
 async function call(p,o={}){const r=await fetch(API+p,{headers:{"Content-Type":"application/json"},...o});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||"API request failed");return d}
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
